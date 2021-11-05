@@ -14,7 +14,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-//CreateType insert a typ on database.
+//CreateType insert a type on database.
 func CreateType(w http.ResponseWriter, r *http.Request) {
 
 	bodyRequest, erro := ioutil.ReadAll(r.Body)
@@ -72,7 +72,7 @@ func FindTypes(w http.ResponseWriter, r *http.Request) {
 	responses.JSON(w, http.StatusOK, types)
 }
 
-//FindTypeById search for as specific typ by id.
+//FindTypeById search for as specific type by id.
 func FindTypeById(w http.ResponseWriter, r *http.Request) {
 	parameters := mux.Vars(r)
 
@@ -100,7 +100,7 @@ func FindTypeById(w http.ResponseWriter, r *http.Request) {
 	responses.JSON(w, http.StatusOK, typ)
 }
 
-//UpdateType update a typ by id.
+//UpdateType update a type by id.
 func UpdateType(w http.ResponseWriter, r *http.Request) {
 	parameters := mux.Vars(r)
 	typeID, erro := strconv.ParseUint(parameters["typeId"], 10, 64)
@@ -143,7 +143,7 @@ func UpdateType(w http.ResponseWriter, r *http.Request) {
 	responses.JSON(w, http.StatusNoContent, nil)
 }
 
-//DeleteType delete a typ by id.
+//DeleteType delete a type by id.
 func DeleteType(w http.ResponseWriter, r *http.Request) {
 
 	parameters := mux.Vars(r)
